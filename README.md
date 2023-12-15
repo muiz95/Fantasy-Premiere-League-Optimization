@@ -1,4 +1,4 @@
-# FPL Predictive Model-CAPSTONE Project Sprint 1
+# FPL Predictive Model-CAPSTONE Project
 by Mu-izz Gbadamosi <br>
 
 The goal of this project is to create a predictive model for the Fantasy Premier League. The model is meant to suggest the best players to select for each gameweek to maximize the total amount of points while minimizing the amount spent.
@@ -79,3 +79,35 @@ The `data` folder contains four comma separated files:
 | was_home                   | If the player was playing at home or not                                                                                                                                            |
 | yellow_cards               | The number of yellow cards received by a player                                                                                                                                     |
 | GW                         | The round or Gameweek that a match was played                                                                                                                                       |
+
+## Modeling
+=============================================================
+
+We transition to the modeling phase, where we'll employ various regression models such as Linear Regression, Non-Linear Regression, Neural Network, and Decision Tree. Our objective is to predict the `total_points`, treating it as the target variable.
+
+Our approach is to use several individual models to predict the total points directly, considering all relevant independent variables.
+
+Our model evaluation framework involves metrics like Mean Absolute Error (MAE), R-squared, and Adj-R-squared. K-fold cross-validation will assess the generalization performance of our models. By comparing different approaches, we aim to identify the most effective model for predicting FPL player performance.
+
+As we progress, we'll refine our models and assess their robustness, ensuring their practical applicability in the dynamic world of Fantasy Premier League.
+
+Here are the key insights from the Data Modeling:
+
+Findings from R-squared and Adjusted R-squared:
+- The R-squared and Adjusted R-squared of each model are almost equal. This suggest that the models are likely to generalize well and perform well with new and unseen data. This also indicates that the model does not overfit.
+- The Neural Network models has the highiest Rsquared values followed by the Gradient Boost model meaning they exhibit the highiest performance when handling the test set and new unseen data.
+- The least performing model is the Decision Tree Model with 80% of the variability in the dependent variable being explained by the independent variables in your model.
+
+Findings from MAE of Test an Train set:
+- Low MAE (close to zero) on both the train and test sets suggests that the model is making accurate predictions.
+- If the difference between the MAE for test and train is significant, it is a good indication of overfitting.
+- The Neural Network model has the lowest MAE values followed by the Gradient Boost model meaning the average magnitude of errors between predicted values and actual values are significantly low which is good for our dataset.
+- There is not a significant difference between MAE of test and train set for the Neural Network
+- Although the Gradient Boosting has low MAE, the MAE of test and train sets are significantly different which is a sign of overfitting or underfitting.
+- The model with the highiest MAE for test and train set is the Linear Regression model with PCA which means it is the least performing out of all the models.
+
+#### Conclusion:
+- Neural Network model emerges as our most optimal model in predicting our target variable(`total_points`) based on its favorable MAE, R-squared and Adjusted R-squared values.
+- The second pick from our models is the Gradient Boosting model based on performance. The model still shows signs of overfitting/underfitting so futher hyperparameter tuning will be needed to optimize the model.
+- Feature performance varies between models so we could incorporate more models to see which features appear the most often.
+- Since we are selecting the Neural Network as our optimal model, we can say that our most important features for predicting the target variable are `Points_per_minute` followed by `goals_scored` and `minutes`.
