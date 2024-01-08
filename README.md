@@ -1,29 +1,28 @@
 # FPL Predictive Model-CAPSTONE Project
 by Mu-izz Gbadamosi <br>
 
-The goal of this project is to create a predictive model for the Fantasy Premier League. The model is meant to suggest the best players to select for each gameweek to maximize the total amount of points while minimizing the amount spent.
+Welcome to the Fantasy Premier League (FPL) Data Analysis and Prediction project! This project is designed to provide insights into player performance, trends, and predictions for Fantasy Premier League enthusiasts. Whether you're a seasoned FPL manager looking for data-driven strategies or a beginner seeking guidance, this project has something for everyone.
 
-### Problem Area:
-My area of interest is the application of data science in the prediction and optimization of team selection in the Fantasy Premier League(FPL). FPL is a popular online fantasy soccer league that focuses on the English Premier League and its player performances each game week. Participants in the fantasy league select a team of real premier league players and earn points based on their real life performance given certain point criteria. The challenge of the league is creating a team that maximises point accumulation while within a fixed budget constraint and adhering to basic football rules with regards to team formation and player positions. The opportunity here is to make a machine learning model that can assist the FPL players in optimising their team selection and make data driven decisions to improve their teams performance and rankings based on previous trends.
+## Overview
+Fantasy Premier League is a popular online fantasy football game where participants assemble virtual teams of real-life Premier League players and compete based on their actual performances in the league. This project aims to analyze historical FPL data, uncover patterns, and build predictive models to assist managers in making informed decisions about player selection, transfers, and captain choices.
 
-
-### The User:
-The users experiencing these problems are FPL players, Premier League enthusiasts, bettors and betting companies. FPL players and enthusiasts invest time and effort in selecting their FPL teams and player transfers throughout the season. By benefiting from the outcomes of this project, FPL players can make more strategic decisions and achieve higher rankings to succeed in the game and possibly win cash prizes.
-Betting companies can benefit from the outcome of this FPL prediction model by using these informed decisions to optimise their odds and potentially attract more customers.
-
-### The Big Idea:
-Machine Learning can provide solutions to FPL optimization challenges by analysing historical premier league data and making data driven decisions. It can also help in analysing team statistics. This could involve predicting player performance for upcoming fixtures, identifying fixtures that FPL players can capitalise on, optimising player transfers when players get injured. 
-Past approaches to this problem have included manual fixture analysis, statistical modelling, heuristic-based strategies, etc. 
-Application of machine learning models such as regression for price prediction, classification models to classify players based on good and risky pick, time series forecasting for player price changes, etc
-
-### The Impact:
-The impact of this project can be beneficial for FPL players and betting companies. FPL players spend hours competing and strategizing in the game. This could optimize their team selection towards improved rankings and possible cash prizes. Betting companies can use this project for making more informed decisions about odds and increase in user engagement
+## Features
+Data Exploration: Dive into detailed exploratory data analysis of FPL datasets, examining player statistics, team performance, and game-week trends.
+Player Performance Analysis: Analyze player performance based on key metrics, such as total points, goals scored, assists, clean sheets, and more.
+Predictive Modeling: Build and evaluate predictive models, including machine learning algorithms and neural networks, to forecast player performance in upcoming game weeks.
+Feature Engineering: Explore various features, including lag variables, form, and player contributions, to enhance model accuracy.
+Visualization: Visualize data trends and model predictions through interactive charts and plots.
 
 
-The `notebooks` folder contains my jupyter notebook:
 
-1. `Final Project.ipynb` <br>
+The `notebooks` folder contains my jupyter notebooks:
+
+1. `Mu-izz_Gbadamosi- Notebook #1 - Cleaning_and_EDA.ipynb` <br>
     - Contains data preprocessing and exploratory data analysis of my FPL dataset
+2. `Mu-izz_Gbadamosi- Notebook #2 - Modelling.ipynb` <br>
+    - Contains modelling techniques and final model selection
+3. `FPL.py` <br>
+    - Streamlit app showcasing the results from the final model
 
 The `data` folder contains four comma separated files:
 
@@ -33,6 +32,16 @@ The `data` folder contains four comma separated files:
     - The original dataset for 2022/2023 FPL season from Vaastav's GitHub repository which i might use later on for further comparison to my model
 3. `cleaned.csv` <br>
     - cleaned dataset from my preliminary analysis which i will use for my modelling
+
+The `slide` folder contains 3 presentation files:
+
+1. `Capstone Project Sprint 1 Presentation.pdf` <br>
+    - The presentation for sprint 1 of my project showcasing the topic and data analysis
+2. `Capstone Project Sprint 2 Presentation.pdf` <br>
+    - The presentation for sprint 2 of my project showcasing the topic, data analysis, preprocessing, model selection
+3. `Capstone Project Sprint 3 Presentation.pdf` <br>
+    - The final presentation of my project showing the model selection and product concept demo
+
 
 
 **Data Dictionary**
@@ -110,4 +119,4 @@ Findings from MAE of Test an Train set:
 - Neural Network model emerges as our most optimal model in predicting our target variable(`total_points`) based on its favorable MAE, R-squared and Adjusted R-squared values.
 - The second pick from our models is the Gradient Boosting model based on performance. The model still shows signs of overfitting/underfitting so futher hyperparameter tuning will be needed to optimize the model.
 - Feature performance varies between models so we could incorporate more models to see which features appear the most often.
-- Since we are selecting the Neural Network as our optimal model, we can say that our most important features for predicting the target variable are `Points_per_minute` followed by `goals_scored` and `minutes`.
+- Since we are selecting the Neural Network as our optimal model, we can say that our most important features for predicting the target variable are `goals_scored` followed by `minutes` and `clean_sheets`.
